@@ -1,2 +1,2 @@
-# Burger
+# Burger Frontend
 Platform for burger fanatics
