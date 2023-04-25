@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Vina Sans';
+    src: local('Vina Sans'), url(./../../fonts/InstrumentSerif-Regular.ttf) format('truetype');
+}
+
+
+.title {
+    font-family: 'Vina Sans';
+    color: #063970;
+
+}
