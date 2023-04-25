@@ -12,7 +12,7 @@ export const Home: React.FC = () => {
     useEffect(() => {
         restaurantService.getRestaurants()
             .then(data => setRestaurants(data));
-    }, restaurants);
+    }, []);
 
     const handleRating = (rate: number) => {
         setRating(rate)
@@ -31,7 +31,7 @@ export const Home: React.FC = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {restaurants && restaurants.map(restaurant =>
+                    {restaurants.length !== 0 && restaurants.map(restaurant =>
                         <tr key={restaurant.id} >
                             <td>{/*<img className="img" src={restaurant.image} alt="logo" />*/}
                                 <div style={{ display: 'flex', margin: '15px 10px' }}>{restaurant.name}</div></td>
