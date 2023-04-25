@@ -9,7 +9,7 @@ export const CustomNavbar: React.FC = () => {
 
         <Navbar bg="light" expand="lg" className="title">
         <Container>
-            <Navbar.Brand href="#home">
+            <Navbar.Brand href="">
             <Lottie
                         loop
                         animationData={lottieJson}
@@ -19,8 +19,8 @@ export const CustomNavbar: React.FC = () => {
             </Navbar.Brand>
             <Navbar.Brand href="#home">Burger Fanatics &trade;</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto">
+            <Navbar.Collapse className="justify-content-end">
+                <Nav>
                     <Nav.Link href="/home">Home</Nav.Link>
                     <Nav.Link href="/about">About</Nav.Link>
                     <Nav.Link href="/contact">Contact</Nav.Link>

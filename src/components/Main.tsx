@@ -21,7 +21,9 @@ export const Main: React.FC = () => {
                 </Routes>
             </Router>
 
-            <div style={{ display: 'flex', justifyContent: 'center', margin: '20px' }} >
+{/**
+ * 
+ *  <div style={{ display: 'flex', justifyContent: 'center', margin: '20px' }} >
                 <header className="App-header">
                     <Lottie
                         loop
@@ -41,6 +43,8 @@ export const Main: React.FC = () => {
                 </div>
 
             </div>
+ */}
+           
         </div>
 
     )
