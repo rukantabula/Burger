@@ -1,41 +1,54 @@
-import React from "react";
-import { Table } from "react-bootstrap";
+import { Rating } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { Button, Modal, Table } from "react-bootstrap";
 import './Home.css';
+import restaurantService from "src/service/restaurant-service";
+import { Restaurant } from '../../model/restaurant';
 
 export const Home: React.FC = () => {
-    return (
+    const [rating, setRating] = useState(3)
+    const [restaurants, setRestaurants] = useState<Restaurant[]>([])
 
+    useEffect(() => {
+        restaurantService.getRestaurants()
+            .then(data => setRestaurants(data));
+    }, restaurants);
+
+    const handleRating = (rate: number) => {
+        setRating(rate)
+        // Some logic
+    }
+
+    return (
         <div className="container">
-                <h2 className="title" style={{ display: 'flex', margin: '20px 0px' }}>Ratings today!</h2>
-                <Table striped bordered hover className="title">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Username</th>
+            <h2 className="title" style={{ display: 'flex', margin: '20px 0px' }}>Ratings today!</h2>
+            <Table responsive="sm" striped bordered hover className="title" color="#fff">
+                <thead>
+                    <tr>
+                        <th>Restaurant</th>
+                        <th>Price (in DKK)</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {restaurants && restaurants.map(restaurant =>
+                        <tr key={restaurant.id} >
+                            <td>{/*<img className="img" src={restaurant.image} alt="logo" />*/}
+                                <div style={{ display: 'flex', margin: '15px 10px' }}>{restaurant.name}</div></td>
+                            <td>{restaurant.price}</td>
+                            <td>
+                                <Rating
+                                    readOnly
+                                    name="simple-controlled"
+                                    value={rating}
+                                    onChange={() => handleRating}
+                                />
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td colSpan={2}>Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </Table>
-            </div>
+                    )}
+
+                </tbody>
+            </Table>
+        </div>
     )
 }
