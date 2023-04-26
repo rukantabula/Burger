@@ -17,13 +17,12 @@ export const Home: React.FC = () => {
     useEffect(() => {
         getRestaurants()
             .then(data => setRestaurants(data));
-    }, []);
+    }, [restaurants]);
 
 
     const renderCreateEntryModal = (show: boolean) => setShowCreateEntryModal(show);
 
     const renderDetailedOverviewModal = (show: boolean) => setShowDetailedOverviewModal(show);
-
 
     return (
         <div className="container">

@@ -82,6 +82,26 @@ import { Restaurant } from "../model/restaurant"
                     category: "visualPresentation",
                     value: 3
                 }]
+            },
+            {
+                id: 5,
+                name: "restaurant 5",
+                image: "https://images.deliveryhero.io/image/fd-dk/LH/q4sw-listing.jpg",
+                city: "aarhus",
+                price: 120,
+                overAllRaring: 1,
+                ratings: [{
+                    category: "taste",
+                    value: 1
+                },
+                {
+                    category: "texture",
+                    value: 1
+                },
+                {
+                    category: "visualPresentation",
+                    value: 1
+                }]
             }
 
         ]
