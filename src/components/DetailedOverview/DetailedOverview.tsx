@@ -1,6 +1,6 @@
-import { Rating } from "@mui/material";
+import { Card, CardActions, CardContent, CardMedia, Rating, Typography } from "@mui/material";
 import React from "react";
-import { Modal } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import { getRatingLabel } from "src/controller/CreateEntryController";
 import { Restaurant, RestaurantRating } from '../../model/restaurant';
 
@@ -17,22 +17,39 @@ export const DetailedOverview: React.FC<Props> = (props) => {
                 <Modal.Title>{props.restaurant.name}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <div style={{ justifyContent: 'center' }}>
-                    <div>Price (in DKK): {props.restaurant.price}</div>
-                    <img src={props.restaurant.image} alt="logo" />
-                    <div>
-                        {props.restaurant.ratings.map((rating: RestaurantRating) => (
-                            <div key={props.restaurant.id}>
-                                <div>{getRatingLabel(rating.category)}</div>
+                <Card>
+                    <CardMedia
+                        sx={{ height: 140 }}
+                        image={props.restaurant.image}
+                        title="green iguana"
+                    />
+                    <CardContent>
+                        <Typography variant="body2" color="text.secondary">
+                            <div>Price (in DKK): {props.restaurant.price}</div>
+                            {props.restaurant.ratings.map((rating: RestaurantRating) => (
+                                <div key={props.restaurant.id}>
+                                    <div>{getRatingLabel(rating.category)}</div>
+                                    <Rating
+                                        readOnly
+                                        name="simple-controlled"
+                                        value={rating.value}
+                                    />
+                                </div>
+                            ))}
+                            <div>
+                                <div>Overall rating</div>
                                 <Rating
                                     readOnly
                                     name="simple-controlled"
-                                    value={rating.value}
+                                    value={props.restaurant.overAllRaring}
                                 />
                             </div>
-                        ))}
-                    </div>
-                </div>
+                            <div>Opening Hours</div>
+                            <div style={{ fontSize: '12px', margin: '5px 5px 5px' }} >08:00 - 22:00</div>
+                            <Button style={{ margin: '20px 0px 0px' }} key="key" onClick={() => { }}>Show on map</Button>
+                        </Typography>
+                    </CardContent>
+                </Card>
 
             </Modal.Body>
             <Modal.Footer>

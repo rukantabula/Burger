@@ -7,7 +7,7 @@ import { Contact } from "./Contact/Contact";
 import { Home } from "./Home/Home";
 import { CustomNavbar } from "./Shared/CustomNavbar";
 import './Main.css';
-import { Button, ButtonGroup } from "@mui/material";
+import { Button, ButtonGroup, Card } from "@mui/material";
 
 export const Main: React.FC = () => {
     const [showLogin, setShowLogin] = useState(true);
@@ -47,7 +47,7 @@ export const Main: React.FC = () => {
                         </header>
 
                     </div>
-                    <div>
+                    <Card variant="outlined">
                         <div style={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
                             <h1 className="title">Burger Fanatics &trade;</h1>
 
@@ -61,8 +61,16 @@ export const Main: React.FC = () => {
                             >
                                 {buttons}
                             </ButtonGroup>
+
                         </div>
-                    </div>
+                        <div className="title" style={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
+                            OR
+                        </div>
+                        <div style={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
+
+                            <Button variant="contained" key="key-4" onClick={() => { logIn(false); }}>Create Account</Button>
+                        </div>
+                    </Card>
                 </div>
             }
         </div>

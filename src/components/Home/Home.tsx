@@ -32,7 +32,7 @@ export const Home: React.FC = () => {
                     <tr>
                         <th>Restaurant</th>
                         <th>Price (in DKK)</th>
-                        <th>Rating</th>
+                        <th>Overall rating</th>
                     </tr>
                 </thead>
                 <tbody>
