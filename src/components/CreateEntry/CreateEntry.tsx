@@ -1,6 +1,7 @@
 import { Rating, Button } from "@mui/material";
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
+import { ratingLabels } from "src/controller/CreateEntryController";
 import { CustomTextField } from "../Shared/CustomTextField";
 import './CreateEntry.css';
 
@@ -28,15 +29,18 @@ export const CreateEntry: React.FC<Props> = (props) => {
                 <CustomTextField fieldName="Retaurant Name" />
                 <CustomTextField fieldName="City" />
                 <CustomTextField fieldName="Price" startAdornment="DKK" />
-                <div style={{ margin: '10px' }}>
-                    Rate
-                    <div>
-                        <Rating
-                            name="simple-controlled"
-                            value={rating}
-                            onChange={() => handleRating(1)} />
+                {Array.from(ratingLabels.values()).map((label: string) =>
+                    <div key={label} style={{ margin: '10px' }}>
+                        Rate {label}
+                        <div>
+                            <Rating
+                                name="simple-controlled"
+                                value={rating}
+                                onChange={() => handleRating(1)} />
+                        </div>
+
                     </div>
-                </div>
+                )}
 
                 <Button fullWidth sx={{ m: 1 }} variant="contained" component="label">
                     Upload Photo

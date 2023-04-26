@@ -19,7 +19,7 @@ import { Restaurant } from "../model/restaurant"
                     value: 4
                 },
                 {
-                    category: "visual presentation",
+                    category: "visualPresentation",
                     value: 2
                 }]
             },
@@ -39,7 +39,7 @@ import { Restaurant } from "../model/restaurant"
                     value: 5
                 },
                 {
-                    category: "visual presentation",
+                    category: "visualPresentation",
                     value: 4
                 }]
             },
@@ -59,7 +59,7 @@ import { Restaurant } from "../model/restaurant"
                     value: 5
                 },
                 {
-                    category: "visual presentation",
+                    category: "visualPresentation",
                     value: 5
                 }]
             },
@@ -79,7 +79,7 @@ import { Restaurant } from "../model/restaurant"
                     value: 2
                 },
                 {
-                    category: "visual presentation",
+                    category: "visualPresentation",
                     value: 3
                 }]
             }

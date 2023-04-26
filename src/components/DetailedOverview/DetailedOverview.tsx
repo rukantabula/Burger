@@ -1,6 +1,7 @@
 import { Rating } from "@mui/material";
 import React from "react";
 import { Modal } from "react-bootstrap";
+import { getRatingLabel } from "src/controller/CreateEntryController";
 import { Restaurant, RestaurantRating } from '../../model/restaurant';
 
 interface Props {
@@ -17,12 +18,12 @@ export const DetailedOverview: React.FC<Props> = (props) => {
             </Modal.Header>
             <Modal.Body>
                 <div style={{ justifyContent: 'center' }}>
-                    <div>price (in DKK): {props.restaurant.price}</div>
+                    <div>Price (in DKK): {props.restaurant.price}</div>
                     <img src={props.restaurant.image} alt="logo" />
                     <div>
                         {props.restaurant.ratings.map((rating: RestaurantRating) => (
                             <div key={props.restaurant.id}>
-                                <div>{rating.category}</div>
+                                <div>{getRatingLabel(rating.category)}</div>
                                 <Rating
                                     readOnly
                                     name="simple-controlled"
