@@ -17,11 +17,11 @@ export const DetailedOverview: React.FC<Props> = (props) => {
             </Modal.Header>
             <Modal.Body>
                 <div style={{ justifyContent: 'center' }}>
-                    <div key={props.restaurant.id}>price (in DKK): {props.restaurant.price}</div>
+                    <div>price (in DKK): {props.restaurant.price}</div>
                     <img src={props.restaurant.image} alt="logo" />
                     <div>
                         {props.restaurant.ratings.map((rating: RestaurantRating) => (
-                            <div>
+                            <div key={props.restaurant.id}>
                                 <div>{rating.category}</div>
                                 <Rating
                                     readOnly

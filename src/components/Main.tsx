@@ -7,7 +7,7 @@ import { Contact } from "./Contact/Contact";
 import { Home } from "./Home/Home";
 import { CustomNavbar } from "./Shared/CustomNavbar";
 import './Main.css';
-import { Box, Button, ButtonGroup, Card } from "@mui/material";
+import { Button, ButtonGroup } from "@mui/material";
 
 export const Main: React.FC = () => {
     const [showLogin, setShowLogin] = useState(true);
@@ -44,7 +44,6 @@ export const Main: React.FC = () => {
                                 play
                                 style={{ width: 150, height: 150 }}
                             />
-
                         </header>
 
                     </div>
