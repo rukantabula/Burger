@@ -1,23 +1,29 @@
-import { Rating } from "@mui/material";
+import { Button, IconButton, Rating } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Button, Modal, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import './Home.css';
-import restaurantService from "src/service/restaurant-service";
 import { Restaurant } from '../../model/restaurant';
+import { getRestaurants } from "src/controller/HomeController";
+import { CreateEntry } from "../CreateEntry/CreateEntry";
+import { DetailedOverview } from "../DetailedOverview/DetailedOverview";
 
 export const Home: React.FC = () => {
-    const [rating, setRating] = useState(3)
-    const [restaurants, setRestaurants] = useState<Restaurant[]>([])
+    const [showCreateEntryModal, setShowCreateEntryModal] = useState(false);
+    const [showDetailedOverviewModal, setShowDetailedOverviewModal] = useState(false);
+
+    const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+    const [restaurant, setRestaurant] = useState<Restaurant>();
 
     useEffect(() => {
-        restaurantService.getRestaurants()
+        getRestaurants()
             .then(data => setRestaurants(data));
     }, []);
 
-    const handleRating = (rate: number) => {
-        setRating(rate)
-        // Some logic
-    }
+
+    const renderCreateEntryModal = (show: boolean) => setShowCreateEntryModal(show);
+
+    const renderDetailedOverviewModal = (show: boolean) => setShowDetailedOverviewModal(show);
+
 
     return (
         <div className="container">
@@ -32,23 +38,34 @@ export const Home: React.FC = () => {
                 </thead>
                 <tbody>
                     {restaurants.length !== 0 && restaurants.map(restaurant =>
-                        <tr key={restaurant.id} >
-                            <td>{/*<img className="img" src={restaurant.image} alt="logo" />*/}
+                        <tr key={restaurant.id} onClick={() => {
+                            setRestaurant(restaurant);
+                            setShowDetailedOverviewModal(true);
+                        }}>
+                            <td>
                                 <div style={{ display: 'flex', margin: '15px 10px' }}>{restaurant.name}</div></td>
                             <td>{restaurant.price}</td>
                             <td>
                                 <Rating
                                     readOnly
                                     name="simple-controlled"
-                                    value={rating}
-                                    onChange={() => handleRating}
+                                    value={restaurant.overAllRaring}
                                 />
                             </td>
                         </tr>
                     )}
-
                 </tbody>
             </Table>
+            {showDetailedOverviewModal && restaurant &&
+                <DetailedOverview
+                    restaurant={restaurant}
+                    renderDetailedOverviewModal={renderDetailedOverviewModal} />
+            }
+            {showCreateEntryModal && 
+            <CreateEntry renderCreateEntryModal={renderCreateEntryModal} />
+            }
+
+            <Button key="key" variant="contained" onClick={() => { renderCreateEntryModal(true); }}>Create new entry</Button>
         </div>
     )
 }

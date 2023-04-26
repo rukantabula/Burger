@@ -1,8 +1,8 @@
 import React from "react"
 import { Navbar, Container, Nav } from "react-bootstrap";
 import Lottie from "react-lottie-player";
-import './Home/Home.css';
-import lottieJson from '../assets/animations/burger-logo.json';
+import '../Home/Home.css';
+import lottieJson from '../../assets/animations/burger-logo.json';
 
 export const CustomNavbar: React.FC = () => {
     return (

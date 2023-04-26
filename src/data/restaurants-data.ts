@@ -9,17 +9,18 @@ import { Restaurant } from "../model/restaurant"
                 image: "https://www.mcdonalds.com/content/dam/sites/dk/nfl/app-promo/212188_Order_McD_950x720.jpg",
                 city: "aarhus",
                 price: 130,
-                rating: [{
+                overAllRaring: 3,
+                ratings: [{
                     category: "taste",
-                    value: 7
+                    value: 3
                 },
                 {
                     category: "texture",
-                    value: 8
+                    value: 4
                 },
                 {
                     category: "visual presentation",
-                    value: 9
+                    value: 2
                 }]
             },
             {
@@ -28,17 +29,18 @@ import { Restaurant } from "../model/restaurant"
                 image: "https://burgerimperiet.dk/files/74/media/1910-top-10-bedste-burger-i-arhus-se-de-bedste-burgersteder-her.jpg",
                 city: "aarhus",
                 price: 100,
-                rating: [{
+                overAllRaring: 4,
+                ratings: [{
                     category: "taste",
-                    value: 6
+                    value: 3
                 },
                 {
                     category: "texture",
-                    value: 7
+                    value: 5
                 },
                 {
                     category: "visual presentation",
-                    value: 8
+                    value: 4
                 }]
             },
             {
@@ -47,17 +49,18 @@ import { Restaurant } from "../model/restaurant"
                 image: "https://images.deliveryhero.io/image/fd-dk/LH/q4sw-listing.jpg",
                 city: "aarhus",
                 price: 90,
-                rating: [{
+                overAllRaring: 5,
+                ratings: [{
                     category: "taste",
-                    value: 5
+                    value: 35
                 },
                 {
                     category: "texture",
-                    value: 4
+                    value: 5
                 },
                 {
                     category: "visual presentation",
-                    value: 6
+                    value: 5
                 }]
             },
             {
@@ -66,17 +69,18 @@ import { Restaurant } from "../model/restaurant"
                 image: "https://smagaarhus.dk/wp-content/uploads/2016/05/The-Burger-Shack-1-e1462735181980.jpg",
                 city: "aarhus",
                 price: 150,
-                rating: [{
+                overAllRaring: 2,
+                ratings: [{
                     category: "taste",
-                    value: 9
+                    value: 1
                 },
                 {
                     category: "texture",
-                    value: 8
+                    value: 2
                 },
                 {
                     category: "visual presentation",
-                    value: 9
+                    value: 3
                 }]
             }
 

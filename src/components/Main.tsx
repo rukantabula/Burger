@@ -5,7 +5,7 @@ import lottieJson from '../assets/animations/burger-logo.json';
 import { About } from "./About/About";
 import { Contact } from "./Contact/Contact";
 import { Home } from "./Home/Home";
-import { CustomNavbar } from "./CustomNavbar";
+import { CustomNavbar } from "./Shared/CustomNavbar";
 import './Main.css';
 import { Box, Button, ButtonGroup, Card } from "@mui/material";
 

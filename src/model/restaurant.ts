@@ -4,8 +4,11 @@ export interface Restaurant {
     image: string,
     city: string,
     price: number,
-    rating: {
-        category: string,
-        value: number
-    }[]
+    overAllRaring: number,
+    ratings: RestaurantRating[]
+}
+
+export interface RestaurantRating {
+    category: string,
+    value: number
 }
