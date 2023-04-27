@@ -17,8 +17,7 @@ export const CreateEntry: React.FC<Props> = (props) => {
         setRating(rate)
         // Some logic
     }
-
-    const createEntry = () => { };
+    
     return (
 
         <Modal show={true} onHide={handleClose}>

@@ -5,7 +5,7 @@ import { Restaurant } from "../model/restaurant"
         return [
             {
                 id: 1,
-                name: "restaurant 1",
+                name: "Mc Donald",
                 image: "https://www.mcdonalds.com/content/dam/sites/dk/nfl/app-promo/212188_Order_McD_950x720.jpg",
                 city: "aarhus",
                 price: 130,
@@ -25,7 +25,7 @@ import { Restaurant } from "../model/restaurant"
             },
             {
                 id: 2,
-                name: "restaurant 2",
+                name: "Burger imperiet",
                 image: "https://burgerimperiet.dk/files/74/media/1910-top-10-bedste-burger-i-arhus-se-de-bedste-burgersteder-her.jpg",
                 city: "aarhus",
                 price: 100,
@@ -45,7 +45,7 @@ import { Restaurant } from "../model/restaurant"
             },
             {
                 id: 3,
-                name: "restaurant 3",
+                name: "Burger shark",
                 image: "https://images.deliveryhero.io/image/fd-dk/LH/q4sw-listing.jpg",
                 city: "aarhus",
                 price: 90,
@@ -65,7 +65,7 @@ import { Restaurant } from "../model/restaurant"
             },
             {
                 id: 4,
-                name: "restaurant 4",
+                name: "Smagaarhus",
                 image: "https://smagaarhus.dk/wp-content/uploads/2016/05/The-Burger-Shack-1-e1462735181980.jpg",
                 city: "aarhus",
                 price: 150,
@@ -85,7 +85,7 @@ import { Restaurant } from "../model/restaurant"
             },
             {
                 id: 5,
-                name: "restaurant 5",
+                name: "Burger hut",
                 image: "https://images.deliveryhero.io/image/fd-dk/LH/q4sw-listing.jpg",
                 city: "aarhus",
                 price: 120,

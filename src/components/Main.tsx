@@ -47,7 +47,7 @@ export const Main: React.FC = () => {
                         </header>
 
                     </div>
-                    <Card variant="outlined">
+                    <Card variant="outlined" sx={{ minWidth: 175 }}>
                         <div style={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
                             <h1 className="title">Burger Fanatics &trade;</h1>
 
