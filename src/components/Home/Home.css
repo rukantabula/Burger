@@ -4,10 +4,15 @@
 }
 
 
-.title {
+.text {
     font-family: 'Vina Sans';
     color: #063970;
 
+}
+
+.header {
+    display: 'flex';
+    margin: 20px 0px;
 }
 
 img {

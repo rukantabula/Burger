@@ -1,9 +1,9 @@
 import React from 'react';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { render } from 'react-dom';
+import './index.css';
 
 document.title = 'Burger Fanatics';
 render(
@@ -18,4 +18,5 @@ render(
 const sendMetrics = (metric: string) => {
   // send JSON.stringify(metric) payload to me for monitoring
 }
+
 reportWebVitals(sendMetrics);

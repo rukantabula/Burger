@@ -1,9 +1,8 @@
-import { Rating, Button } from "@mui/material";
 import React, { useState } from "react";
+import { Rating, Button } from "@mui/material";
 import { Modal } from "react-bootstrap";
 import { ratingLabels } from "src/controller/CreateEntryController";
 import { CustomTextField } from "../Shared/CustomTextField";
-import './CreateEntry.css';
 
 interface Props {
     renderCreateEntryModal: (shoModal: boolean) => void;
@@ -11,13 +10,12 @@ interface Props {
 
 export const CreateEntry: React.FC<Props> = (props) => {
 
-    const [rating, setRating] = useState<number>()
+    const [rating, setRating] = useState<number>();
+
     const handleClose = () => props.renderCreateEntryModal(false);
-    const handleRating = (rate: number) => {
-        setRating(rate)
-        // Some logic
-    }
-    
+
+    const handleRating = () => {};
+
     return (
 
         <Modal show={true} onHide={handleClose}>
@@ -35,9 +33,8 @@ export const CreateEntry: React.FC<Props> = (props) => {
                             <Rating
                                 name="simple-controlled"
                                 value={rating}
-                                onChange={() => handleRating(1)} />
+                                onChange={() => handleRating()} />
                         </div>
-
                     </div>
                 )}
 

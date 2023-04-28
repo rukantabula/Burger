@@ -1,11 +1,9 @@
 import React from 'react';
-import { Main } from './components/Main';
-import { BrowserRouter } from 'react-router-dom';
+import { Main } from './components/Main/Main';
 
 export const App: React.FC = () => {
   return (
-      <Main />
-
+    <Main />
   );
 }
 
